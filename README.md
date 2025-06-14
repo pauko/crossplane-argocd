@@ -1,13 +1,13 @@
 # crossplane-argocd
-[![Crossplane plain ArgoCD](https://github.com/jonashackt/crossplane-argocd/workflows/crossplane-argocd/badge.svg)](https://github.com/jonashackt/crossplane-argocd/actions/workflows/crossplane-argocd.yml)
-[![Crossplane, ArgoCD & External Secrets Operator (+Doppler)](https://github.com/jonashackt/crossplane-argocd/workflows/crossplane-argocd-external-secrets/badge.svg)](https://github.com/jonashackt/crossplane-argocd/actions/workflows/crossplane-argocd-external-secrets.yml)
+[![Crossplane plain ArgoCD](https://github.com/pauko/crossplane-argocd/workflows/crossplane-argocd/badge.svg)](https://github.com/pauko/crossplane-argocd/actions/workflows/crossplane-argocd.yml)
+[![Crossplane, ArgoCD & External Secrets Operator (+Doppler)](https://github.com/pauko/crossplane-argocd/workflows/crossplane-argocd-external-secrets/badge.svg)](https://github.com/pauko/crossplane-argocd/actions/workflows/crossplane-argocd-external-secrets.yml)
 ![crossplane-version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjonashackt%2Fcrossplane-argocd%2Fmain%2Fcrossplane%2FChart.yaml&query=%24.dependencies%5B%3A1%5D.version&label=crossplane&color=blue)
 ![argocd-version](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjonashackt%2Fcrossplane-argocd%2Fmain%2Fargocd%2Finstall%2Fkustomization.yaml&query=%24.resources%5B%3A1%5D&label=argocd&color=rgb(236%2C%20110%2C%2076))
 ![provider-aws-ec2](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjonashackt%2Fcrossplane-argocd%2Fmain%2Fupbound%2Fprovider-aws%2Fprovider%2Fupbound-provider-aws-ec2.yaml&query=%24.spec.package&label=provider-aws-ec2&color=rgb(109%2C%20100%2C%20245))
 ![provider-aws-eks](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjonashackt%2Fcrossplane-argocd%2Fmain%2Fupbound%2Fprovider-aws%2Fprovider%2Fupbound-provider-aws-eks.yaml&query=%24.spec.package&label=provider-aws-eks&color=rgb(109%2C%20100%2C%20245))
 ![provider-aws-iam](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjonashackt%2Fcrossplane-argocd%2Fmain%2Fupbound%2Fprovider-aws%2Fprovider%2Fupbound-provider-aws-iam.yaml&query=%24.spec.package&label=provider-aws-iam&color=rgb(109%2C%20100%2C%20245))
 ![provider-aws-s3](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjonashackt%2Fcrossplane-argocd%2Fmain%2Fupbound%2Fprovider-aws%2Fprovider%2Fupbound-provider-aws-s3.yaml&query=%24.spec.package&label=provider-aws-s3&color=rgb(109%2C%20100%2C%20245))
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/jonashackt/crossplane-argocd/blob/master/LICENSE)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/pauko/crossplane-argocd/blob/master/LICENSE)
 [![renovateenabled](https://img.shields.io/badge/renovate-enabled-yellow)](https://renovatebot.com)
 
 Example project showing how to use the crossplane together with ArgoCD
@@ -335,7 +335,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
     path: crossplane
   destination:
@@ -438,7 +438,7 @@ spec:
   project: default
   source:
     path: upbound/provider-aws/config
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
   destination:
     namespace: default
@@ -518,7 +518,7 @@ spec:
   project: default
   source:
     path: upbound/provider-aws/config
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
   destination:
     namespace: default
@@ -611,7 +611,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
     path: argocd/crossplane-bootstrap
   destination:
@@ -630,7 +630,7 @@ spec:
         maxDuration: 1m
 ```
 
-This `Application` will look for manifests at `argocd/crossplane-bootstrap` in our repository https://github.com/jonashackt/crossplane-argocd. And there all our Crossplane components are already defined as ArgoCD `Application` manifests. 
+This `Application` will look for manifests at `argocd/crossplane-bootstrap` in our repository https://github.com/pauko/crossplane-argocd. And there all our Crossplane components are already defined as ArgoCD `Application` manifests. 
 
 Also don't forget to define the finalizers `finalizers: - resources-finalizer.argocd.argoproj.io`. Otherwise the Applications managed by this App of Apps won't be deleted and will still be running, if you delete just the App of Apps!
 
@@ -795,7 +795,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
     path: infrastructure
   destination:
@@ -991,7 +991,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
     path: external-secrets/install
   destination:
@@ -1116,7 +1116,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
     path: external-secrets
   destination:
@@ -1389,7 +1389,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: HEAD
     path: upbound/provider-aws/provider
   destination:
@@ -1547,7 +1547,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: app-deployment
     path: upbound/provider-aws/apis
   destination:
@@ -1622,7 +1622,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: app-deployment
     path: infrastructure/eks
   destination:
@@ -1747,7 +1747,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: app-deployment
     path: crossplane-contrib
   destination:
@@ -1960,7 +1960,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jonashackt/crossplane-argocd
+    repoURL: https://github.com/pauko/crossplane-argocd
     targetRevision: app-deployment
     path: crossplane-contrib/provider-argocd/config
   destination:
